@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balneabilidade Ceará — SEMACE</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --propria:#00C9A7;--alerta:#FFA502;--impropria:#FF4757;
+  --bg:#0B1120;--panel:#111827;--panel2:#1a2235;
+  --border:rgba(255,255,255,0.07);--text:#E8EDF5;--muted:#6B7280;--accent:#3B82F6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow:hidden}
+#app{display:flex;height:100vh;width:100vw}
+/* ── SIDEBAR ── */
+#sidebar{width:340px;min-width:340px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:1000;overflow:hidden}
+.sidebar-header{padding:18px 18px 12px;border-bottom:1px solid var(--border)}
+.badge{display:inline-block;background:rgba(59,130,246,0.15);color:var(--accent);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:7px}
+.sidebar-header h1{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;line-height:1.2;color:#fff}
+.sidebar-header p{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5}
+.boletim-bar{padding:9px 18px;background:rgba(59,130,246,0.07);border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;font-size:11px;color:#93C5FD;line-height:1.6}
+.boletim-bar .dot{width:8px;height:8px;border-radius:50%;background:#3B82F6;flex-shrink:0;margin-top:4px;animation:pulse-blue 2s infinite}
+@keyframes pulse-blue{0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.5)}50%{box-shadow:0 0 0 6px rgba(59,130,246,0)}}
+.filters{padding:9px 18px;border-bottom:1px solid var(--border);display:flex;gap:5px}
+.filter-btn{flex:1;padding:6px 6px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px;justify-content:center}
+.filter-btn .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.filter-btn.active{color:#fff;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07)}
+.filter-btn:hover{background:rgba(255,255,255,0.05)}
+.search-wrap{padding:9px 18px;border-bottom:1px solid var(--border)}
+.search-wrap input{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-size:12px;font-family:'DM Sans',sans-serif;outline:none;transition:border .2s}
+.search-wrap input::placeholder{color:var(--muted)}
+.search-wrap input:focus{border-color:rgba(59,130,246,0.5)}
+.beach-list{flex:1;overflow-y:auto;padding:4px 0}
+.beach-list::-webkit-scrollbar{width:3px}
+.beach-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.beach-section-title{padding:7px 18px 2px;font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.beach-item{padding:9px 18px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(255,255,255,0.02)}
+.beach-item:hover{background:rgba(255,255,255,0.04)}
+.beach-item.selected{background:rgba(59,130,246,0.1)}
+.beach-status-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.beach-info{flex:1;min-width:0}
+.beach-name{font-size:12px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.beach-ref{font-size:10px;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.beach-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
+.beach-tag{font-size:9px;font-weight:600;padding:2px 7px;border-radius:4px}
+.tend-badge{font-size:10px;color:var(--muted)}
+.tend-melhorando{color:#00C9A7}
+.tend-piorando{color:#FF4757}
+.tend-estavel{color:#6B7280}
+.legend-footer{padding:11px 18px;border-top:1px solid var(--border)}
+.legend-title{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.legend-items{display:flex;flex-direction:column;gap:5px}
+.legend-item{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--text)}
+.legend-line{width:24px;height:5px;border-radius:3px;flex-shrink:0}
+/* ── MAPA ── */
+#map-container{flex:1;position:relative}
+#map{width:100%;height:100%}
+#stats-bar{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:50px;padding:7px 20px;display:flex;gap:18px;align-items:center;font-size:11px;white-space:nowrap}
+.stat-item{display:flex;align-items:center;gap:5px}
+.stat-item .num{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
+.sep{color:var(--border)}
+/* ── POPUP CUSTOMIZADO ── */
+.leaflet-popup-content-wrapper{background:var(--panel2)!important;border:1px solid rgba(255,255,255,0.1)!important;border-radius:14px!important;box-shadow:0 24px 64px rgba(0,0,0,.7)!important;padding:0!important}
+.leaflet-popup-tip-container{display:none}
+.leaflet-popup-content{margin:0!important;width:auto!important}
+.popup-inner{padding:16px;width:300px}
+.popup-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.popup-header-left{display:flex;align-items:flex-start;gap:10px}
+.popup-status-dot{width:11px;height:11px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.popup-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;line-height:1.3}
+.popup-ref{font-size:10px;color:#6B7280;margin-top:2px;font-style:italic}
+.popup-tend{font-size:18px;line-height:1}
+.popup-divider{height:1px;background:rgba(255,255,255,0.07);margin:11px 0}
+.popup-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.popup-label{font-size:10px;color:#6B7280}
+.popup-val{font-size:11px;font-weight:500;color:#E8EDF5}
+.popup-status-badge{display:block;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:600;width:100%;text-align:center;margin-top:4px}
+/* ── GRÁFICO DE HISTÓRICO ── */
+.popup-chart-section{margin-top:12px}
+.popup-chart-title{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.popup-chart-wrap{position:relative;height:80px;width:100%}
+.popup-chart-legend{display:flex;gap:10px;margin-top:6px;justify-content:center}
+.popup-chart-legend span{font-size:9px;display:flex;align-items:center;gap:4px;color:var(--muted)}
+.popup-chart-legend i{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.popup-boletim{font-size:9px;color:#374151;margin-top:10px;text-align:center}
+/* ── TOOLTIP DE SEGMENTO ── */
+#seg-tooltip{position:absolute;bottom:28px;right:18px;z-index:900;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:11px;max-width:270px;display:none;pointer-events:none;line-height:1.7}
+#seg-tooltip .st-title{font-weight:600;font-size:12px;color:#fff;margin-bottom:4px}
+#seg-tooltip .st-body{color:var(--muted)}
+#seg-tooltip .st-body b{color:var(--text)}
+@media(max-width:700px){#sidebar{width:100%;min-width:unset;height:44vh;border-right:none;border-bottom:1px solid var(--border)}#app{flex-direction:column}#map-container{height:56vh}.popup-inner{width:260px}}
+</style>
+</head>
+<body>
+<div id="app">
+<div id="sidebar">
+  <div class="sidebar-header">
+    <div class="badge">SEMACE · Boletim Oficial</div>
+    <h1>Balneabilidade<br>do Litoral Cearense</h1>
+    <p>Pontos georreferenciados com histórico de 12 semanas e tendência de qualidade.</p>
+  </div>
+  <div class="boletim-bar">
+    <div class="dot"></div>
+    <div>
+      <strong>Fortaleza:</strong> 23–29/03/2026<br>
+      <strong>Litoral Leste/Oeste:</strong> Fev/2026
+    </div>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterBeaches('all',this)"><span class="dot" style="background:var(--muted)"></span>Todas</button>
+    <button class="filter-btn" onclick="filterBeaches('P',this)"><span class="dot" style="background:var(--propria)"></span>Própria</button>
+    <button class="filter-btn" onclick="filterBeaches('EA',this)"><span class="dot" style="background:var(--alerta)"></span>Alerta</button>
+    <button class="filter-btn" onclick="filterBeaches('I',this)"><span class="dot" style="background:var(--impropria)"></span>Imprópria</button>
+  </div>
+  <div class="search-wrap">
+    <input type="text" id="search-input" placeholder="🔍  Buscar ponto, praia ou município..." oninput="onSearch()">
+  </div>
+  <div class="beach-list" id="beach-list"></div>
+  <div class="legend-footer">
+    <div class="legend-title">Camada Costeira &amp; Tendência</div>
+    <div class="legend-items">
+      <div class="legend-item"><div class="legend-line" style="background:var(--propria)"></div><span>Próprio / Aconselhável</span></div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--alerta)"></div><span>Em Alerta</span></div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--impropria)"></div><span>Impróprio</span></div>
+      <div class="legend-item" style="margin-top:4px"><span style="font-size:13px">↑</span><span style="color:var(--propria)">Melhorando</span><span style="margin-left:8px;font-size:13px">↓</span><span style="color:var(--impropria)">Piorando</span><span style="margin-left:8px;font-size:13px">→</span><span>Estável</span></div>
+    </div>
+  </div>
+</div>
+<div id="map-container">
+  <div id="map"></div>
+  <div id="stats-bar">
+    <div class="stat-item"><span class="num" id="st-total" style="color:#fff">0</span><span style="color:var(--muted)">pontos</span></div>
+    <span class="sep">|</span>
+    <div class="stat-item"><span class="num" id="st-p" style="color:var(--propria)">0</span><span style="color:var(--muted)">próprias</span></div>
+    <span class="sep">|</span>
+    <div class="stat-item"><span class="num" id="st-ea" style="color:var(--alerta)">0</span><span style="color:var(--muted)">alerta</span></div>
+    <span class="sep">|</span>
+    <div class="stat-item"><span class="num" id="st-i" style="color:var(--impropria)">0</span><span style="color:var(--muted)">impróprias</span></div>
+  </div>
+  <div id="seg-tooltip">
+    <div class="st-title" id="st-title"></div>
+    <div class="st-body"  id="st-body"></div>
+  </div>
+</div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+//  DADOS — carregados do JSON local (em produção: fetch de GitHub Pages)
+//  Em produção substituir por:
+//    fetch('data/balneabilidade.json').then(r=>r.json()).then(init)
+// ════════════════════════════════════════════════════════════════
+
+// Histórico de 12 semanas por ponto (gerado pelo scraper_semace.py)
+const HISTORICO = {"67L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"32L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"10L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"09L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"08L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"07L":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"06L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"05L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"04L":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"03L":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"02L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"11L":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"01L":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"12C":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"13C":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"14C":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"15C":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"16C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"17C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"18C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"19C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"20C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"69C":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"22O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"23O":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"24O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"25O":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"26O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"27O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"28O":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"29O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"30O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"31O":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"I"}],"33LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"34LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"35LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"36LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"37LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"38LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"39LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"40LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"41LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"42LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"EA"}],"43LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"44LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"45LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"46LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"47LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"EA"},{"periodo":"19/01/2026 a 25/01/2026","status":"EA"},{"periodo":"26/01/2026 a 01/02/2026","status":"EA"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"I"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"48LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"68LE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"I"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"49OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"50OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"I"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"EA"}],"51OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"52OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"53OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"54OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"I"},{"periodo":"02/03/2026 a 08/03/2026","status":"I"},{"periodo":"09/03/2026 a 15/03/2026","status":"I"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"55OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"56OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"57OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"EA"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"58OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"59OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"I"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"60OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"61OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"62OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"63OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"64OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"P"},{"periodo":"09/02/2026 a 15/02/2026","status":"P"},{"periodo":"16/02/2026 a 22/02/2026","status":"P"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"EA"},{"periodo":"09/03/2026 a 15/03/2026","status":"EA"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"65OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"EA"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"P"},{"periodo":"02/02/2026 a 08/02/2026","status":"EA"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"EA"},{"periodo":"23/02/2026 a 01/03/2026","status":"EA"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"P"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}],"66OE":[{"periodo":"05/01/2026 a 11/01/2026","status":"P"},{"periodo":"12/01/2026 a 18/01/2026","status":"P"},{"periodo":"19/01/2026 a 25/01/2026","status":"P"},{"periodo":"26/01/2026 a 01/02/2026","status":"I"},{"periodo":"02/02/2026 a 08/02/2026","status":"I"},{"periodo":"09/02/2026 a 15/02/2026","status":"I"},{"periodo":"16/02/2026 a 22/02/2026","status":"I"},{"periodo":"23/02/2026 a 01/03/2026","status":"P"},{"periodo":"02/03/2026 a 08/03/2026","status":"P"},{"periodo":"09/03/2026 a 15/03/2026","status":"P"},{"periodo":"16/03/2026 a 22/03/2026","status":"EA"},{"periodo":"23/03/2026 a 29/03/2026","status":"P"}]};
+
+// Status atual = última entrada do histórico
+function currentStatus(cod) {
+  const h = HISTORICO[cod];
+  return h && h.length ? h[h.length-1].status : "P";
+}
+
+// Tendência: compara média das últimas 4 vs 4 anteriores
+function calcTendencia(hist) {
+  const s={P:2,EA:1,I:0};
+  if(!hist||hist.length<4) return "estável";
+  const r=hist.slice(-4).map(h=>s[h.status]);
+  const a=hist.length>=8?hist.slice(-8,-4).map(h=>s[h.status]):r;
+  const d=r.reduce((x,y)=>x+y,0)/r.length - a.reduce((x,y)=>x+y,0)/a.length;
+  if(d>0.4) return "melhorando";
+  if(d<-0.4) return "piorando";
+  return "estável";
+}
+
+const TEND_ICON  = {melhorando:"↑",piorando:"↓",estável:"→"};
+const TEND_COLOR = {melhorando:"#00C9A7",piorando:"#FF4757",estável:"#6B7280"};
+
+const BEACHES = [
+  {id:"67L",praia:"Sabiaguaba",     ref:"Rua Sabiaguaba",                        lat:-3.8175,lng:-38.3930,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"32L",praia:"Abreulândia",    ref:"Rua Teófilo Ramos",                     lat:-3.7940,lng:-38.4252,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"10L",praia:"P. do Futuro",   ref:"Rua Ismael Pordeus",                    lat:-3.7748,lng:-38.4378,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"09L",praia:"P. do Futuro",   ref:"Areninha Praia do Futuro I",            lat:-3.7692,lng:-38.4398,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"08L",praia:"P. do Futuro",   ref:"Rua Clóvis Mota – Clube dos Oficiais",  lat:-3.7638,lng:-38.4412,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"07L",praia:"P. do Futuro",   ref:"Rua Gerôncio Brígido Neto – GV 01",     lat:-3.7588,lng:-38.4420,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"06L",praia:"P. do Futuro",   ref:"Av. Carlos Jereissati",                 lat:-3.7535,lng:-38.4428,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"05L",praia:"P. do Futuro",   ref:"Rua Antônio Atualpa Rodrigues",         lat:-3.7488,lng:-38.4433,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"04L",praia:"P. do Futuro",   ref:"Rua Francisco Montenegro – GV 06",      lat:-3.7438,lng:-38.4438,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"03L",praia:"P. do Futuro",   ref:"Rua Embratel – GV 08",                  lat:-3.7388,lng:-38.4440,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"02L",praia:"P. do Futuro",   ref:"Capela de Santa Terezinha – GV 09",     lat:-3.7338,lng:-38.4435,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"11L",praia:"Titanzinho",     ref:"Praia do Titanzinho",                   lat:-3.7270,lng:-38.4418,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"01L",praia:"P. do Futuro",   ref:"Caça e Pesca – Rua Germiniano Jurema",  lat:-3.7212,lng:-38.4392,setor:"Leste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"12C",praia:"Mucuripe",       ref:"Porto dos Botes – Rua Interna",         lat:-3.7188,lng:-38.4538,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"13C",praia:"Mucuripe",       ref:"Mercado dos Peixes do Mucuripe",        lat:-3.7195,lng:-38.4610,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"14C",praia:"Mucuripe",       ref:"Estátua Iracema do Mucuripe",           lat:-3.7202,lng:-38.4680,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"15C",praia:"Mucuripe",       ref:"Jardim Japonês / Arena Beira Mar",      lat:-3.7212,lng:-38.4760,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"16C",praia:"Meireles",       ref:"Av. Desembargador Moreira – Feirinha",  lat:-3.7228,lng:-38.4842,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"17C",praia:"Meireles",       ref:"Rua José Vilar – GV 06",               lat:-3.7238,lng:-38.4910,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"18C",praia:"Meireles",       ref:"Av. Rui Barbosa – Aterro",              lat:-3.7245,lng:-38.4980,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"19C",praia:"Iracema",        ref:"Estátua Iracema Guardiã – Aterrinho",   lat:-3.7225,lng:-38.5058,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"20C",praia:"Iracema",        ref:"Av. Almirante Tamandaré – Ponte Metal.", lat:-3.7212,lng:-38.5122,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"69C",praia:"Iracema",        ref:"Praia dos Crush – C. Cultural Belchior",lat:-3.7198,lng:-38.5178,setor:"Centro",       municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"22O",praia:"Leste Oeste",    ref:"Próximo à Igreja de Santa Edwiges",     lat:-3.7172,lng:-38.5312,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"23O",praia:"Pirambu",        ref:"Praia da Leste – Av. Filomeno Gomes",   lat:-3.7135,lng:-38.5512,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"24O",praia:"Pirambu",        ref:"Praia da Formosa – P.S. Guiomar Arruda",lat:-3.7098,lng:-38.5720,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"25O",praia:"Colônia",        ref:"Av. Pasteur – Est. Elevatória Arpoador",lat:-3.7060,lng:-38.5912,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"26O",praia:"Colônia",        ref:"Praia do 'L' – Rua Dr. Theberge",      lat:-3.7025,lng:-38.6082,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"27O",praia:"Barra do Ceará", ref:"Coqueirinho – Projeto 4 Varas",         lat:-3.6988,lng:-38.6248,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"28O",praia:"Barra do Ceará", ref:"Goiabeiras – Rua Coqueiro Verde",       lat:-3.6945,lng:-38.6410,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"29O",praia:"Barra do Ceará", ref:"Rua Bom Jesus",                         lat:-3.6900,lng:-38.6565,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"30O",praia:"Barra do Ceará", ref:"Rua Rita das Goiabeiras",               lat:-3.6858,lng:-38.6700,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"31O",praia:"Barra do Ceará", ref:"Foz do Rio Ceará",                      lat:-3.6785,lng:-38.6882,setor:"Oeste",        municipio:"Fortaleza",boletim:"23-29/03/2026"},
+  {id:"68LE",praia:"Porto das Dunas",ref:"Rua Antônio Alencar",                  lat:-3.8062,lng:-38.3882,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"33LE",praia:"Porto das Dunas",ref:"Porto das Dunas",                      lat:-3.8095,lng:-38.3845,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"34LE",praia:"Prainha",        ref:"Prainha",                               lat:-3.8432,lng:-38.3640,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"35LE",praia:"Presídio",       ref:"Presídio",                              lat:-3.8612,lng:-38.3520,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"36LE",praia:"Iguape",         ref:"Iguape",                                lat:-3.8998,lng:-38.3218,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"37LE",praia:"Barro Preto",    ref:"Barro Preto",                           lat:-3.9412,lng:-38.2988,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"38LE",praia:"Batoque",        ref:"Batoque",                               lat:-3.9822,lng:-38.2740,setor:"Litoral Leste",municipio:"Aquiraz",   boletim:"Fev/2026"},
+  {id:"39LE",praia:"Barra Nova",     ref:"Barra Nova",                            lat:-4.0218,lng:-38.2512,setor:"Litoral Leste",municipio:"Cascavel",  boletim:"Fev/2026"},
+  {id:"40LE",praia:"Tabubinha",      ref:"Tabubinha",                             lat:-4.0618,lng:-38.2318,setor:"Litoral Leste",municipio:"Cascavel",  boletim:"Fev/2026"},
+  {id:"41LE",praia:"Morro Branco",   ref:"Morro Branco Velho",                    lat:-4.1752,lng:-38.1298,setor:"Litoral Leste",municipio:"Beberibe",  boletim:"Fev/2026"},
+  {id:"42LE",praia:"Praia das Fontes",ref:"Praia das Fontes",                    lat:-4.1882,lng:-38.1188,setor:"Litoral Leste",municipio:"Beberibe",  boletim:"Fev/2026"},
+  {id:"43LE",praia:"Canto Verde",    ref:"Canto Verde",                           lat:-4.2312,lng:-38.0808,setor:"Litoral Leste",municipio:"Beberibe",  boletim:"Fev/2026"},
+  {id:"44LE",praia:"Pontal de Maceió",ref:"Pontal de Maceió",                    lat:-4.4582,lng:-37.8042,setor:"Litoral Leste",municipio:"Fortim",    boletim:"Fev/2026"},
+  {id:"46LE",praia:"Majorlândia",    ref:"Majorlândia",                           lat:-4.3248,lng:-37.8058,setor:"Litoral Leste",municipio:"Aracati",   boletim:"Fev/2026"},
+  {id:"45LE",praia:"Canoa Quebrada", ref:"Canoa Quebrada",                        lat:-4.3508,lng:-37.7272,setor:"Litoral Leste",municipio:"Aracati",   boletim:"Fev/2026"},
+  {id:"47LE",praia:"Quixaba",        ref:"Quixaba",                               lat:-4.3618,lng:-37.6458,setor:"Litoral Leste",municipio:"Icapuí",    boletim:"Fev/2026"},
+  {id:"48LE",praia:"Redonda",        ref:"Redonda",                               lat:-4.4112,lng:-37.3568,setor:"Litoral Leste",municipio:"Icapuí",    boletim:"Fev/2026"},
+  {id:"49OE",praia:"Icaraí",         ref:"Icaraí (Caucaia)",                      lat:-3.7068,lng:-38.6350,setor:"Litoral Oeste",municipio:"Caucaia",   boletim:"Fev/2026"},
+  {id:"50OE",praia:"Tabuba",         ref:"Tabuba",                                lat:-3.6698,lng:-38.6718,setor:"Litoral Oeste",municipio:"Caucaia",   boletim:"Fev/2026"},
+  {id:"51OE",praia:"Cumbuco",        ref:"Cumbuco",                               lat:-3.6252,lng:-38.7268,setor:"Litoral Oeste",municipio:"Caucaia",   boletim:"Fev/2026"},
+  {id:"52OE",praia:"Lagamar do Cauípe",ref:"Lagamar do Cauípe",                  lat:-3.5908,lng:-38.7588,setor:"Litoral Oeste",municipio:"Caucaia",   boletim:"Fev/2026"},
+  {id:"53OE",praia:"Pecém",          ref:"Pecém",                                 lat:-3.5422,lng:-38.7998,setor:"Litoral Oeste",municipio:"São Gonçalo do Amarante",boletim:"Fev/2026"},
+  {id:"54OE",praia:"Taíba",          ref:"Taíba",                                 lat:-3.5042,lng:-38.8728,setor:"Litoral Oeste",municipio:"São Gonçalo do Amarante",boletim:"Fev/2026"},
+  {id:"55OE",praia:"Paracuru",       ref:"Paracuru",                              lat:-3.4132,lng:-39.0278,setor:"Litoral Oeste",municipio:"Paracuru",  boletim:"Fev/2026"},
+  {id:"58OE",praia:"Mundaú",         ref:"Mundaú",                                lat:-3.2922,lng:-39.2052,setor:"Litoral Oeste",municipio:"Trairi",    boletim:"Fev/2026"},
+  {id:"57OE",praia:"Flecheiras",     ref:"Flecheiras",                            lat:-3.2678,lng:-39.2428,setor:"Litoral Oeste",municipio:"Trairi",    boletim:"Fev/2026"},
+  {id:"59OE",praia:"Baleia",         ref:"Baleia",                                lat:-3.2558,lng:-39.3118,setor:"Litoral Oeste",municipio:"Itapipoca", boletim:"Fev/2026"},
+  {id:"56OE",praia:"Lagoinha",       ref:"Lagoinha",                              lat:-3.0492,lng:-39.4648,setor:"Litoral Oeste",municipio:"Paraipaba", boletim:"Fev/2026"},
+  {id:"60OE",praia:"Icaraí de Amontada",ref:"Icaraí de Amontada",               lat:-2.9668,lng:-39.5888,setor:"Litoral Oeste",municipio:"Amontada",  boletim:"Fev/2026"},
+  {id:"61OE",praia:"Almofala",       ref:"Almofala",                              lat:-2.9062,lng:-39.8148,setor:"Litoral Oeste",municipio:"Itarema",   boletim:"Fev/2026"},
+  {id:"62OE",praia:"Arpoeiras",      ref:"Arpoeiras",                             lat:-2.8688,lng:-39.9438,setor:"Litoral Oeste",municipio:"Acaraú",    boletim:"Fev/2026"},
+  {id:"66OE",praia:"Praia do Preá",  ref:"Cruz – Praia do Preá",                 lat:-2.5888,lng:-40.4178,setor:"Litoral Oeste",municipio:"Cruz",      boletim:"Fev/2026"},
+  {id:"63OE",praia:"Jericoacoara",   ref:"Jericoacoara",                          lat:-2.7958,lng:-40.5118,setor:"Litoral Oeste",municipio:"Jijoca de Jericoacoara",boletim:"Fev/2026"},
+  {id:"64OE",praia:"Camocim",        ref:"Camocim – Travessia das balsas",        lat:-2.9012,lng:-40.8388,setor:"Litoral Oeste",municipio:"Camocim",   boletim:"Fev/2026"},
+  {id:"65OE",praia:"Bitupitá",       ref:"Bitupitá",                              lat:-3.0982,lng:-41.2768,setor:"Litoral Oeste",municipio:"Barroquinha",boletim:"Fev/2026"},
+];
+
+const STATUS_COLOR={P:"#00C9A7",EA:"#FFA502",I:"#FF4757"};
+const STATUS_LABEL={P:"Própria / Aconselhável",EA:"Em Alerta",I:"Imprópria"};
+const STATUS_BG={P:"rgba(0,201,167,0.15)",EA:"rgba(255,165,2,0.15)",I:"rgba(255,71,87,0.15)"};
+
+function worstStatus(a,b){const r={P:0,EA:1,I:2};return r[a]>=r[b]?a:b}
+const BY_ID={};
+BEACHES.forEach(b=>{
+  b.status = currentStatus(b.id);
+  b.tendencia = calcTendencia(HISTORICO[b.id]);
+  BY_ID[b.id]=b;
+});
+
+// ── Sequência costeira ──────────────────────────────────────────
+const COAST_SEQ=[
+  "48LE","47LE","45LE","46LE",
+  "43LE","42LE","41LE","40LE","39LE","38LE","37LE","36LE","35LE","34LE","33LE","68LE",
+  "67L","32L","10L","09L","08L","07L","06L","05L","04L","03L","02L","11L","01L",
+  "12C","13C","14C","15C","16C","17C","18C","19C","20C","69C",
+  "22O","23O","24O","25O","26O","27O","28O","29O","30O","31O",
+  "49OE","50OE","51OE","52OE","53OE","54OE","55OE",
+  "58OE","57OE","59OE","56OE","60OE","61OE","62OE",
+  "66OE","63OE","64OE","65OE"
+];
+const EXTRA_SEGS=[["43LE","44LE"],["44LE","46LE"]];
+
+// ── Mapa ────────────────────────────────────────────────────────
+const map=L.map('map',{center:[-3.90,-38.90],zoom:9,zoomControl:false,attributionControl:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
+L.control.attribution({position:'bottomleft',prefix:''})
+  .addAttribution('© <a href="https://carto.com/">CARTO</a> · © <a href="https://openstreetmap.org">OSM</a> · Fonte: SEMACE')
+  .addTo(map);
+L.control.zoom({position:'bottomright'}).addTo(map);
+
+// ── Camada costeira (polylines) ─────────────────────────────────
+const segTooltipEl=document.getElementById('seg-tooltip');
+const stTitleEl=document.getElementById('st-title');
+const stBodyEl=document.getElementById('st-body');
+
+function drawSegment(b1,b2){
+  const st=worstStatus(b1.status,b2.status);
+  const color=STATUS_COLOR[st];
+  const line=L.polyline([[b1.lat,b1.lng],[b2.lat,b2.lng]],{
+    color,weight:8,opacity:0.72,lineCap:'round',lineJoin:'round'
+  }).addTo(map);
+  line.on('mouseover',function(){
+    this.setStyle({weight:13,opacity:0.9});
+    stTitleEl.textContent=`${b1.praia} ↔ ${b2.praia}`;
+    stBodyEl.innerHTML=`Status: <b style="color:${color}">${STATUS_LABEL[st]}</b><br>Setor: <b>${b1.setor}</b> · ${b1.boletim}`;
+    segTooltipEl.style.display='block';
+  });
+  line.on('mouseout',function(){
+    this.setStyle({weight:8,opacity:0.72});
+    segTooltipEl.style.display='none';
+  });
+}
+for(let i=0;i<COAST_SEQ.length-1;i++){
+  const b1=BY_ID[COAST_SEQ[i]],b2=BY_ID[COAST_SEQ[i+1]];
+  if(b1&&b2) drawSegment(b1,b2);
+}
+EXTRA_SEGS.forEach(([a,b])=>{const b1=BY_ID[a],b2=BY_ID[b];if(b1&&b2)drawSegment(b1,b2);});
+
+// ── Chart.js: gráfico de barras de status ───────────────────────
+const chartRegistry={};
+
+function buildChartData(cod){
+  const hist=HISTORICO[cod]||[];
+  const labels=hist.map(h=>{
+    const parts=h.periodo.split(' a ');
+    return parts[0]||h.periodo;
+  });
+  const vals=hist.map(h=>h.status==='P'?2:h.status==='EA'?1:0);
+  const colors=hist.map(h=>STATUS_COLOR[h.status]+'CC');
+  return {labels,vals,colors};
+}
+
+function renderChart(cod, canvasId){
+  if(chartRegistry[canvasId]){
+    chartRegistry[canvasId].destroy();
+    delete chartRegistry[canvasId];
+  }
+  const canvas=document.getElementById(canvasId);
+  if(!canvas) return;
+  const {labels,vals,colors}=buildChartData(cod);
+  chartRegistry[canvasId]=new Chart(canvas,{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[{
+        data:vals,
+        backgroundColor:colors,
+        borderRadius:3,
+        borderSkipped:false,
+      }]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      animation:{duration:400},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          callbacks:{
+            label:ctx=>{
+              const s=['Imprópria','Em Alerta','Própria'];
+              return ' '+s[ctx.raw]||'';
+            },
+            title:ctx=>ctx[0].label
+          },
+          backgroundColor:'#1F2937',
+          titleColor:'#9CA3AF',
+          bodyColor:'#E8EDF5',
+          borderColor:'rgba(255,255,255,0.1)',
+          borderWidth:1,
+        }
+      },
+      scales:{
+        x:{
+          display:false,
+          grid:{display:false}
+        },
+        y:{
+          display:false,
+          min:0,max:2,
+          grid:{display:false}
+        }
+      }
+    }
+  });
+}
+
+// ── Popup com histórico ─────────────────────────────────────────
+let popupChartId=0;
+
+function buildPopup(b){
+  const color=STATUS_COLOR[b.status];
+  const tend=b.tendencia;
+  const tendIcon=TEND_ICON[tend];
+  const tendColor=TEND_COLOR[tend];
+  const tendLabel={melhorando:"Melhorando",piorando:"Piorando",estável:"Estável"}[tend];
+  const label=STATUS_LABEL[b.status];
+  const tbg=`background:${STATUS_BG[b.status]};color:${color}`;
+  const cid=`chart-${b.id}-${++popupChartId}`;
+
+  // Última semana com status
+  const hist=HISTORICO[b.id]||[];
+  const ultimoPeriodo=hist.length?hist[hist.length-1].periodo:'—';
+
+  return `<div class="popup-inner">
+    <div class="popup-header">
+      <div class="popup-header-left">
+        <div class="popup-status-dot" style="background:${color}"></div>
+        <div>
+          <div class="popup-name">${b.praia}</div>
+          <div class="popup-ref">${b.ref}</div>
+        </div>
+      </div>
+      <div class="popup-tend" title="${tendLabel}" style="color:${tendColor}">${tendIcon}</div>
+    </div>
+    <div class="popup-divider"></div>
+    <div class="popup-row"><span class="popup-label">Código</span><span class="popup-val">${b.id}</span></div>
+    <div class="popup-row"><span class="popup-label">Município</span><span class="popup-val">${b.municipio}</span></div>
+    <div class="popup-row"><span class="popup-label">Tendência</span><span class="popup-val" style="color:${tendColor}">${tendIcon} ${tendLabel}</span></div>
+    <div class="popup-divider"></div>
+    <div class="popup-status-badge" style="${tbg}">${label}</div>
+    <div class="popup-chart-section">
+      <div class="popup-chart-title">Histórico · 12 semanas</div>
+      <div class="popup-chart-wrap"><canvas id="${cid}"></canvas></div>
+      <div class="popup-chart-legend">
+        <span><i style="background:#00C9A7CC"></i>Própria</span>
+        <span><i style="background:#FFA502CC"></i>Alerta</span>
+        <span><i style="background:#FF4757CC"></i>Imprópria</span>
+      </div>
+    </div>
+    <div class="popup-boletim">SEMACE · ${b.boletim} · CONAMA 274/2000 · Coleta: ${ultimoPeriodo}</div>
+  </div>`;
+}
+
+// ── Marcadores ──────────────────────────────────────────────────
+const MARKERS={};
+let selectedId=null;
+
+BEACHES.forEach(b=>{
+  const m=L.circleMarker([b.lat,b.lng],{
+    radius:7,fillColor:STATUS_COLOR[b.status],
+    color:'#fff',weight:2,fillOpacity:1
+  }).addTo(map);
+
+  m.bindPopup(()=>buildPopup(b),{maxWidth:320,minWidth:300});
+  m.on('popupopen',()=>{
+    // Renderiza o gráfico depois que o popup está no DOM
+    setTimeout(()=>{
+      const canvas=document.querySelector(`[id^="chart-${b.id}-"]`);
+      if(canvas) renderChart(b.id, canvas.id);
+    },50);
+  });
+  m.on('click',()=>selectBeach(b.id));
+  MARKERS[b.id]=m;
+});
+
+// ── Sidebar ─────────────────────────────────────────────────────
+let currentFilter='all',currentSearch='';
+
+function getFiltered(){
+  return BEACHES.filter(b=>{
+    const okSt=currentFilter==='all'||b.status===currentFilter;
+    const q=currentSearch.toLowerCase();
+    const okQ=!q||b.praia.toLowerCase().includes(q)||b.municipio.toLowerCase().includes(q)
+                 ||b.id.toLowerCase().includes(q)||b.ref.toLowerCase().includes(q);
+    return okSt&&okQ;
+  });
+}
+
+function renderList(){
+  const list=document.getElementById('beach-list');
+  list.innerHTML='';
+  const filtered=getFiltered();
+  if(!filtered.length){
+    list.innerHTML='<div style="padding:18px;color:var(--muted);font-size:12px">Nenhum ponto encontrado.</div>';
+    return;
+  }
+  const bySetor={};
+  filtered.forEach(b=>{(bySetor[b.setor]=bySetor[b.setor]||[]).push(b);});
+  Object.entries(bySetor).forEach(([setor,items])=>{
+    const sec=document.createElement('div');
+    sec.className='beach-section-title';
+    sec.textContent=setor;
+    list.appendChild(sec);
+    items.forEach(b=>{
+      const tend=b.tendencia;
+      const el=document.createElement('div');
+      el.className=`beach-item${selectedId===b.id?' selected':''}`;
+      el.dataset.id=b.id;
+      el.innerHTML=`
+        <div class="beach-status-dot" style="background:${STATUS_COLOR[b.status]}"></div>
+        <div class="beach-info">
+          <div class="beach-name">${b.praia} <span style="color:var(--muted);font-size:9px">${b.id}</span></div>
+          <div class="beach-ref">${b.municipio}</div>
+        </div>
+        <div class="beach-right">
+          <div class="beach-tag" style="background:${STATUS_BG[b.status]};color:${STATUS_COLOR[b.status]}">${b.status==='EA'?'Alerta':b.status==='P'?'Própria':'Imprópria'}</div>
+          <div class="tend-badge tend-${tend}">${TEND_ICON[tend]} ${tend}</div>
+        </div>`;
+      el.onclick=()=>selectBeach(b.id);
+      list.appendChild(el);
+    });
+  });
+}
+
+function updateStats(){
+  const src=getFiltered();
+  document.getElementById('st-total').textContent=src.length;
+  document.getElementById('st-p').textContent=src.filter(b=>b.status==='P').length;
+  document.getElementById('st-ea').textContent=src.filter(b=>b.status==='EA').length;
+  document.getElementById('st-i').textContent=src.filter(b=>b.status==='I').length;
+}
+
+function updateMarkers(){
+  const ids=new Set(getFiltered().map(b=>b.id));
+  BEACHES.forEach(b=>{
+    if(ids.has(b.id)){if(!map.hasLayer(MARKERS[b.id]))MARKERS[b.id].addTo(map);}
+    else{if(map.hasLayer(MARKERS[b.id]))map.removeLayer(MARKERS[b.id]);}
+  });
+}
+
+function refresh(){renderList();updateStats();updateMarkers();}
+function filterBeaches(s,btn){currentFilter=s;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');refresh();}
+function onSearch(){currentSearch=document.getElementById('search-input').value;refresh();}
+function selectBeach(id){
+  selectedId=id;
+  const b=BY_ID[id];
+  document.querySelectorAll('.beach-item').forEach(el=>el.classList.toggle('selected',el.dataset.id===id));
+  map.flyTo([b.lat,b.lng],15,{duration:0.9});
+  setTimeout(()=>MARKERS[id]&&MARKERS[id].openPopup(),700);
+}
+
+refresh();
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+name: Atualizar Dados Balneabilidade SEMACE
+
+on:
+  # Toda segunda-feira às 10h horário de Brasília (13h UTC)
+  # A SEMACE coleta às segundas e publica o boletim no mesmo dia
+  schedule:
+    - cron: "0 13 * * 1"
+
+  # Permite rodar manualmente pelo GitHub UI
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (não salva arquivo)"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # necessário para commit + push
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependências
+        run: |
+          pip install --upgrade pip
+          pip install requests pdfplumber
+
+      - name: Executar scraper SEMACE
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python scraper_semace.py --dry-run
+          else
+            python scraper_semace.py
+          fi
+
+      - name: Verificar se há mudanças no JSON
+        id: check_changes
+        run: |
+          if git diff --quiet data/balneabilidade.json 2>/dev/null; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "Nenhuma mudança no JSON"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "JSON atualizado!"
+          fi
+
+      - name: Commit e push dos dados atualizados
+        if: steps.check_changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/balneabilidade.json
+          PERIODO=$(python3 -c "
+          import json
+          with open('data/balneabilidade.json') as f:
+              d = json.load(f)
+          print(d['meta'].get('periodo_atual', 'atualização automática'))
+          ")
+          git commit -m "data: boletim SEMACE — $PERIODO"
+          git push
+
+      - name: Resumo da execução
+        if: always()
+        run: |
+          if [ -f data/balneabilidade.json ]; then
+            python3 -c "
+          import json
+          with open('data/balneabilidade.json') as f:
+              d = json.load(f)
+          meta = d['meta']
+          pontos = d['pontos']
+          status_count = {'P':0,'EA':0,'I':0}
+          for p in pontos.values():
+              hist = p.get('historico',[])
+              if hist:
+                  status_count[hist[-1]['status']] = status_count.get(hist[-1]['status'],0) + 1
+          print(f\"Período: {meta.get('periodo_atual','—')}\")
+          print(f\"Total de pontos: {meta.get('total_pontos','—')}\")
+          print(f\"Próprias/Aconselháveis: {status_count.get('P',0)}\")
+          print(f\"Em Alerta: {status_count.get('EA',0)}\")
+          print(f\"Impróprias: {status_count.get('I',0)}\")
+          print(f\"Gerado em: {meta.get('gerado_em','—')}\")
+          "
+          fi
