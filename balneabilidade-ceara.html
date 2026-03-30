@@ -158,9 +158,27 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 // ════════════════════════════════════════════════════════════════
 
 // Histórico de 12 semanas por ponto (gerado pelo scraper_semace.py)
+const HISTORICO = {};
+
 fetch('data/balneabilidade.json')
-  .then(r => r.json())
-  .then(d => { Object.assign(HISTORICO, d.pontos); refresh(); });
+  .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(d => {
+    // Extrai apenas o array de histórico de cada ponto (d.pontos[cod] é um objeto)
+    Object.keys(d.pontos).forEach(cod => {
+      HISTORICO[cod] = d.pontos[cod].historico || [];
+    });
+    // Recalcula status e tendência com os dados reais
+    BEACHES.forEach(b => {
+      b.status    = currentStatus(b.id);
+      b.tendencia = calcTendencia(HISTORICO[b.id]);
+    });
+    // Atualiza cor dos marcadores no mapa
+    BEACHES.forEach(b => {
+      if(MARKERS[b.id]) MARKERS[b.id].setStyle({fillColor: STATUS_COLOR[b.status]});
+    });
+    refresh();
+  })
+  .catch(e => console.warn('Dados não disponíveis (execute o scraper):', e));
   
 // Status atual = última entrada do histórico
 function currentStatus(cod) {

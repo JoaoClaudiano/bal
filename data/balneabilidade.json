@@ -1,0 +1,3276 @@
+{
+  "meta": {
+    "gerado_em": "2026-03-30T05:00:00-03:00",
+    "fonte": "SEMACE — Superintendência Estadual do Meio Ambiente do Ceará",
+    "url_fonte": "https://www.semace.ce.gov.br/boletim-de-balneabilidade/",
+    "periodo_atual": "23/03/2026 a 29/03/2026",
+    "total_pontos": 68,
+    "semanas_historico": 52
+  },
+  "pontos": {
+    "67L": {
+      "praia": "Sabiaguaba",
+      "ref": "Rua Sabiaguaba",
+      "lat": -3.8175,
+      "lng": -38.393,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "67L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "32L": {
+      "praia": "Abreulândia",
+      "ref": "Rua Teófilo Ramos",
+      "lat": -3.794,
+      "lng": -38.4252,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "32L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "10L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Ismael Pordeus",
+      "lat": -3.7748,
+      "lng": -38.4378,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "10L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "09L": {
+      "praia": "P. do Futuro",
+      "ref": "Areninha Praia do Futuro I",
+      "lat": -3.7692,
+      "lng": -38.4398,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "09L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "08L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Clóvis Mota",
+      "lat": -3.7638,
+      "lng": -38.4412,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "08L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "07L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Gerôncio Brígido Neto",
+      "lat": -3.7588,
+      "lng": -38.442,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "07L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "06L": {
+      "praia": "P. do Futuro",
+      "ref": "Av. Carlos Jereissati",
+      "lat": -3.7535,
+      "lng": -38.4428,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "06L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "05L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Antônio Atualpa Rodrigues",
+      "lat": -3.7488,
+      "lng": -38.4433,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "05L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "04L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Francisco Montenegro",
+      "lat": -3.7438,
+      "lng": -38.4438,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "04L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "03L": {
+      "praia": "P. do Futuro",
+      "ref": "Rua Embratel",
+      "lat": -3.7388,
+      "lng": -38.444,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "03L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "02L": {
+      "praia": "P. do Futuro",
+      "ref": "Capela de Santa Terezinha",
+      "lat": -3.7338,
+      "lng": -38.4435,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "02L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "piorando"
+    },
+    "11L": {
+      "praia": "Titanzinho",
+      "ref": "Praia do Titanzinho",
+      "lat": -3.727,
+      "lng": -38.4418,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "11L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "01L": {
+      "praia": "P. do Futuro",
+      "ref": "Caça e Pesca",
+      "lat": -3.7212,
+      "lng": -38.4392,
+      "setor": "Leste",
+      "municipio": "Fortaleza",
+      "cod": "01L",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "12C": {
+      "praia": "Mucuripe",
+      "ref": "Porto dos Botes",
+      "lat": -3.7188,
+      "lng": -38.4538,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "12C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "13C": {
+      "praia": "Mucuripe",
+      "ref": "Mercado dos Peixes do Mucuripe",
+      "lat": -3.7195,
+      "lng": -38.461,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "13C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "14C": {
+      "praia": "Mucuripe",
+      "ref": "Estátua Iracema do Mucuripe",
+      "lat": -3.7202,
+      "lng": -38.468,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "14C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "15C": {
+      "praia": "Mucuripe",
+      "ref": "Jardim Japonês",
+      "lat": -3.7212,
+      "lng": -38.476,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "15C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "16C": {
+      "praia": "Meireles",
+      "ref": "Av. Desembargador Moreira",
+      "lat": -3.7228,
+      "lng": -38.4842,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "16C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "17C": {
+      "praia": "Meireles",
+      "ref": "Rua José Vilar",
+      "lat": -3.7238,
+      "lng": -38.491,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "17C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "18C": {
+      "praia": "Meireles",
+      "ref": "Av. Rui Barbosa",
+      "lat": -3.7245,
+      "lng": -38.498,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "18C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "19C": {
+      "praia": "Iracema",
+      "ref": "Estátua Iracema Guardiã",
+      "lat": -3.7225,
+      "lng": -38.5058,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "19C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "20C": {
+      "praia": "Iracema",
+      "ref": "Av. Almirante Tamandaré",
+      "lat": -3.7212,
+      "lng": -38.5122,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "20C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "69C": {
+      "praia": "Iracema",
+      "ref": "Praia dos Crush",
+      "lat": -3.7198,
+      "lng": -38.5178,
+      "setor": "Centro",
+      "municipio": "Fortaleza",
+      "cod": "69C",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "22O": {
+      "praia": "Leste Oeste",
+      "ref": "Igreja de Santa Edwiges",
+      "lat": -3.7172,
+      "lng": -38.5312,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "22O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "23O": {
+      "praia": "Pirambu",
+      "ref": "Av. Filomeno Gomes",
+      "lat": -3.7135,
+      "lng": -38.5512,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "23O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "24O": {
+      "praia": "Pirambu",
+      "ref": "PS Guiomar Arruda",
+      "lat": -3.7098,
+      "lng": -38.572,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "24O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "25O": {
+      "praia": "Colônia",
+      "ref": "Est. Elevatória Arpoador",
+      "lat": -3.706,
+      "lng": -38.5912,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "25O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "26O": {
+      "praia": "Colônia",
+      "ref": "Praia do L",
+      "lat": -3.7025,
+      "lng": -38.6082,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "26O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "27O": {
+      "praia": "Barra do Ceará",
+      "ref": "Coqueirinho",
+      "lat": -3.6988,
+      "lng": -38.6248,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "27O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "EA"
+        }
+      ],
+      "tendencia": "melhorando"
+    },
+    "28O": {
+      "praia": "Barra do Ceará",
+      "ref": "Goiabeiras",
+      "lat": -3.6945,
+      "lng": -38.641,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "28O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "29O": {
+      "praia": "Barra do Ceará",
+      "ref": "Rua Bom Jesus",
+      "lat": -3.69,
+      "lng": -38.6565,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "29O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "30O": {
+      "praia": "Barra do Ceará",
+      "ref": "Rua Rita das Goiabeiras",
+      "lat": -3.6858,
+      "lng": -38.67,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "30O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "31O": {
+      "praia": "Barra do Ceará",
+      "ref": "Foz do Rio Ceará",
+      "lat": -3.6785,
+      "lng": -38.6882,
+      "setor": "Oeste",
+      "municipio": "Fortaleza",
+      "cod": "31O",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "I"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "I"
+        }
+      ],
+      "tendencia": "melhorando"
+    },
+    "68LE": {
+      "praia": "Porto das Dunas",
+      "ref": "Rua Antônio Alencar",
+      "lat": -3.8062,
+      "lng": -38.3882,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "68LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "33LE": {
+      "praia": "Porto das Dunas",
+      "ref": "Porto das Dunas",
+      "lat": -3.8095,
+      "lng": -38.3845,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "33LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "34LE": {
+      "praia": "Prainha",
+      "ref": "Prainha",
+      "lat": -3.8432,
+      "lng": -38.364,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "34LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "35LE": {
+      "praia": "Presídio",
+      "ref": "Presídio",
+      "lat": -3.8612,
+      "lng": -38.352,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "35LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "36LE": {
+      "praia": "Iguape",
+      "ref": "Iguape",
+      "lat": -3.8998,
+      "lng": -38.3218,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "36LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "37LE": {
+      "praia": "Barro Preto",
+      "ref": "Barro Preto",
+      "lat": -3.9412,
+      "lng": -38.2988,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "37LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "38LE": {
+      "praia": "Batoque",
+      "ref": "Batoque",
+      "lat": -3.9822,
+      "lng": -38.274,
+      "setor": "Litoral Leste",
+      "municipio": "Aquiraz",
+      "cod": "38LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "39LE": {
+      "praia": "Barra Nova",
+      "ref": "Barra Nova",
+      "lat": -4.0218,
+      "lng": -38.2512,
+      "setor": "Litoral Leste",
+      "municipio": "Cascavel",
+      "cod": "39LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "40LE": {
+      "praia": "Tabubinha",
+      "ref": "Tabubinha",
+      "lat": -4.0618,
+      "lng": -38.2318,
+      "setor": "Litoral Leste",
+      "municipio": "Cascavel",
+      "cod": "40LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "41LE": {
+      "praia": "Morro Branco",
+      "ref": "Morro Branco Velho",
+      "lat": -4.1752,
+      "lng": -38.1298,
+      "setor": "Litoral Leste",
+      "municipio": "Beberibe",
+      "cod": "41LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "42LE": {
+      "praia": "Praia das Fontes",
+      "ref": "Praia das Fontes",
+      "lat": -4.1882,
+      "lng": -38.1188,
+      "setor": "Litoral Leste",
+      "municipio": "Beberibe",
+      "cod": "42LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "43LE": {
+      "praia": "Canto Verde",
+      "ref": "Canto Verde",
+      "lat": -4.2312,
+      "lng": -38.0808,
+      "setor": "Litoral Leste",
+      "municipio": "Beberibe",
+      "cod": "43LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "44LE": {
+      "praia": "Pontal de Maceió",
+      "ref": "Pontal de Maceió",
+      "lat": -4.4582,
+      "lng": -37.8042,
+      "setor": "Litoral Leste",
+      "municipio": "Fortim",
+      "cod": "44LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "46LE": {
+      "praia": "Majorlândia",
+      "ref": "Majorlândia",
+      "lat": -4.3248,
+      "lng": -37.8058,
+      "setor": "Litoral Leste",
+      "municipio": "Aracati",
+      "cod": "46LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "45LE": {
+      "praia": "Canoa Quebrada",
+      "ref": "Canoa Quebrada",
+      "lat": -4.3508,
+      "lng": -37.7272,
+      "setor": "Litoral Leste",
+      "municipio": "Aracati",
+      "cod": "45LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "47LE": {
+      "praia": "Quixaba",
+      "ref": "Quixaba",
+      "lat": -4.3618,
+      "lng": -37.6458,
+      "setor": "Litoral Leste",
+      "municipio": "Icapuí",
+      "cod": "47LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "48LE": {
+      "praia": "Redonda",
+      "ref": "Redonda",
+      "lat": -4.4112,
+      "lng": -37.3568,
+      "setor": "Litoral Leste",
+      "municipio": "Icapuí",
+      "cod": "48LE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "49OE": {
+      "praia": "Icaraí",
+      "ref": "Icaraí (Caucaia)",
+      "lat": -3.7068,
+      "lng": -38.635,
+      "setor": "Litoral Oeste",
+      "municipio": "Caucaia",
+      "cod": "49OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "50OE": {
+      "praia": "Tabuba",
+      "ref": "Tabuba",
+      "lat": -3.6698,
+      "lng": -38.6718,
+      "setor": "Litoral Oeste",
+      "municipio": "Caucaia",
+      "cod": "50OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "51OE": {
+      "praia": "Cumbuco",
+      "ref": "Cumbuco",
+      "lat": -3.6252,
+      "lng": -38.7268,
+      "setor": "Litoral Oeste",
+      "municipio": "Caucaia",
+      "cod": "51OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "52OE": {
+      "praia": "Lagamar do Cauípe",
+      "ref": "Lagamar do Cauípe",
+      "lat": -3.5908,
+      "lng": -38.7588,
+      "setor": "Litoral Oeste",
+      "municipio": "Caucaia",
+      "cod": "52OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "53OE": {
+      "praia": "Pecém",
+      "ref": "Pecém",
+      "lat": -3.5422,
+      "lng": -38.7998,
+      "setor": "Litoral Oeste",
+      "municipio": "São Gonçalo do Amarante",
+      "cod": "53OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "54OE": {
+      "praia": "Taíba",
+      "ref": "Taíba",
+      "lat": -3.5042,
+      "lng": -38.8728,
+      "setor": "Litoral Oeste",
+      "municipio": "São Gonçalo do Amarante",
+      "cod": "54OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "55OE": {
+      "praia": "Paracuru",
+      "ref": "Paracuru",
+      "lat": -3.4132,
+      "lng": -39.0278,
+      "setor": "Litoral Oeste",
+      "municipio": "Paracuru",
+      "cod": "55OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "58OE": {
+      "praia": "Mundaú",
+      "ref": "Mundaú",
+      "lat": -3.2922,
+      "lng": -39.2052,
+      "setor": "Litoral Oeste",
+      "municipio": "Trairi",
+      "cod": "58OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "57OE": {
+      "praia": "Flecheiras",
+      "ref": "Flecheiras",
+      "lat": -3.2678,
+      "lng": -39.2428,
+      "setor": "Litoral Oeste",
+      "municipio": "Trairi",
+      "cod": "57OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "59OE": {
+      "praia": "Baleia",
+      "ref": "Baleia",
+      "lat": -3.2558,
+      "lng": -39.3118,
+      "setor": "Litoral Oeste",
+      "municipio": "Itapipoca",
+      "cod": "59OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "56OE": {
+      "praia": "Lagoinha",
+      "ref": "Lagoinha",
+      "lat": -3.0492,
+      "lng": -39.4648,
+      "setor": "Litoral Oeste",
+      "municipio": "Paraipaba",
+      "cod": "56OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "60OE": {
+      "praia": "Icaraí de Amontada",
+      "ref": "Icaraí de Amontada",
+      "lat": -2.9668,
+      "lng": -39.5888,
+      "setor": "Litoral Oeste",
+      "municipio": "Amontada",
+      "cod": "60OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "61OE": {
+      "praia": "Almofala",
+      "ref": "Almofala",
+      "lat": -2.9062,
+      "lng": -39.8148,
+      "setor": "Litoral Oeste",
+      "municipio": "Itarema",
+      "cod": "61OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "62OE": {
+      "praia": "Arpoeiras",
+      "ref": "Arpoeiras",
+      "lat": -2.8688,
+      "lng": -39.9438,
+      "setor": "Litoral Oeste",
+      "municipio": "Acaraú",
+      "cod": "62OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "66OE": {
+      "praia": "Praia do Preá",
+      "ref": "Cruz – Praia do Preá",
+      "lat": -2.5888,
+      "lng": -40.4178,
+      "setor": "Litoral Oeste",
+      "municipio": "Cruz",
+      "cod": "66OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "63OE": {
+      "praia": "Jericoacoara",
+      "ref": "Jericoacoara",
+      "lat": -2.7958,
+      "lng": -40.5118,
+      "setor": "Litoral Oeste",
+      "municipio": "Jijoca de Jericoacoara",
+      "cod": "63OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "64OE": {
+      "praia": "Camocim",
+      "ref": "Camocim",
+      "lat": -2.9012,
+      "lng": -40.8388,
+      "setor": "Litoral Oeste",
+      "municipio": "Camocim",
+      "cod": "64OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    },
+    "65OE": {
+      "praia": "Bitupitá",
+      "ref": "Bitupitá",
+      "lat": -3.0982,
+      "lng": -41.2768,
+      "setor": "Litoral Oeste",
+      "municipio": "Barroquinha",
+      "cod": "65OE",
+      "historico": [
+        {
+          "periodo": "17/03/2026 a 23/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/03/2026 a 16/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "03/03/2026 a 09/03/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "24/02/2026 a 02/03/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "17/02/2026 a 23/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "10/02/2026 a 16/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "03/02/2026 a 09/02/2026",
+          "status": "P"
+        },
+        {
+          "periodo": "27/01/2026 a 02/02/2026",
+          "status": "EA"
+        },
+        {
+          "periodo": "23/03/2026 a 29/03/2026",
+          "status": "P"
+        }
+      ],
+      "tendencia": "estável"
+    }
+  }
+}
