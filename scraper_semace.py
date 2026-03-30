@@ -16,7 +16,6 @@ Uso:
 Rodado automaticamente via GitHub Actions toda segunda-feira às 10h BRT.
 ─────────────────────────────────────────────────────────────────────────────
 """
-
 import json
 import os
 import re
