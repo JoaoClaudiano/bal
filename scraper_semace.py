@@ -59,7 +59,7 @@ HEADERS = {
 # Fonte: SEMACE + geocodificação na linha da praia (OSM)
 PONTOS_META = {
     # Fortaleza — Setor Leste
-    "67L": {"praia":"Sabiaguaba",      "ref":"Rua Sabiaguaba",                          "lat":-3.817520,"lng":-38.394025,"setor":"Leste",        "municipio":"Fortaleza"},
+    "67L": {"praia":"Sabiaguaba",      "ref":"Rua Sabiaguaba",                          "lat":-3.81752,"lng":-38.394025,"setor":"Leste",        "municipio":"Fortaleza"},
     "32L": {"praia":"Abreulândia",     "ref":"Rua Teófilo Ramos",                       "lat":-3.794012,"lng":-38.429580,"setor":"Leste",        "municipio":"Fortaleza"},
     "10L": {"praia":"P. do Futuro",    "ref":"Rua Ismael Pordeus",                      "lat":-3.774825,"lng":-38.448250,"setor":"Leste",        "municipio":"Fortaleza"},
     "09L": {"praia":"P. do Futuro",    "ref":"Areninha Praia do Futuro I",              "lat":-3.769248,"lng":-38.447850,"setor":"Leste",        "municipio":"Fortaleza"},
