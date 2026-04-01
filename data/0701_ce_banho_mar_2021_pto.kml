@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:ns2="http://www.google.com/kml/ext/2.2" xmlns:ns3="http://www.w3.org/2005/Atom" xmlns:ns4="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <Schema name="0701_ce_banho_mar_2021_pto_1" id="0701_ce_banho_mar_2021_pto_1">
+            <SimpleField type="string" name="praia"/>
+            <SimpleField type="string" name="municipio"/>
+            <SimpleField type="double" name="longitude"/>
+            <SimpleField type="double" name="latitude"/>
+        </Schema>
+        <Folder>
+            <name>0701_ce_banho_mar_2021_pto</name>
+            <Placemark id="0701_ce_banho_mar_2021_pto.1">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Ilha do Rato</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.056</SimpleData>
+                        <SimpleData name="latitude">-2.832</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.05550710847232,-2.8317422529593284</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.2">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Lagoa da Volta</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.257</SimpleData>
+                        <SimpleData name="latitude">-2.811</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.25713385537611,-2.810548312162387</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.3">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Morgado</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.277</SimpleData>
+                        <SimpleData name="latitude">-2.808</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.27749849146942,-2.8079661456663296</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.4">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Castelhano</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.372</SimpleData>
+                        <SimpleData name="latitude">-2.81</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.371697827564205,-2.809906739983855</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.5">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Volta do Rio</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-39.984</SimpleData>
+                        <SimpleData name="latitude">-2.843</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.98384076574269,-2.8428344498067255</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.6">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Espraiado</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.016</SimpleData>
+                        <SimpleData name="latitude">-2.84</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.01558142223839,-2.839615089376596</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.7">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Arpoeiras</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.138</SimpleData>
+                        <SimpleData name="latitude">-2.826</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.138305854224605,-2.8256698576615893</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.8">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Mosqueiro</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.148</SimpleData>
+                        <SimpleData name="latitude">-2.834</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.14783667238247,-2.834171366928826</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.9">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Coroa Grande</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.17</SimpleData>
+                        <SimpleData name="latitude">-2.824</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.170045083105975,-2.823510444062792</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.10">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Monteiros</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.192</SimpleData>
+                        <SimpleData name="latitude">-2.811</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.19225079214027,-2.810721563683619</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.11">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Aranaú</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.238</SimpleData>
+                        <SimpleData name="latitude">-2.813</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.2377473955585,-2.812801650879884</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.12">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barrinha de Baixo</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.3</SimpleData>
+                        <SimpleData name="latitude">-2.806</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.30016165416313,-2.8063505916477984</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.13">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Carrapateira</SimpleData>
+                        <SimpleData name="municipio">Acaraú</SimpleData>
+                        <SimpleData name="longitude">-40.347</SimpleData>
+                        <SimpleData name="latitude">-2.806</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.346711884957465,-2.8062976482553896</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.14">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Caetanos</SimpleData>
+                        <SimpleData name="municipio">Amontada</SimpleData>
+                        <SimpleData name="longitude">-39.552</SimpleData>
+                        <SimpleData name="latitude">-3.08</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.55157260518029,-3.0799320263761594</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.15">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Icaraizinho de Amontada</SimpleData>
+                        <SimpleData name="municipio">Amontada</SimpleData>
+                        <SimpleData name="longitude">-39.611</SimpleData>
+                        <SimpleData name="latitude">-3.05</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.61082875560417,-3.050107116161058</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.16">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Moitas</SimpleData>
+                        <SimpleData name="municipio">Amontada</SimpleData>
+                        <SimpleData name="longitude">-39.668</SimpleData>
+                        <SimpleData name="latitude">-3.008</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.667956621443096,-3.007512825791752</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.17">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia Bela</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.327</SimpleData>
+                        <SimpleData name="latitude">-3.922</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.32714465857818,-3.9220975956758197</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.18">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Presídio</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.312</SimpleData>
+                        <SimpleData name="latitude">-3.933</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.312350347563246,-3.9325829603242557</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.19">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Barro Preto</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.275</SimpleData>
+                        <SimpleData name="latitude">-3.946</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.27460903813336,-3.9463766723352713</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.20">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Batoque</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.23</SimpleData>
+                        <SimpleData name="latitude">-4.002</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.22994503183343,-4.00163885459915</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.21">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Porto das Dunas</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.393</SimpleData>
+                        <SimpleData name="latitude">-3.824</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.39289453039505,-3.8239672307342434</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.22">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Japão</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.374</SimpleData>
+                        <SimpleData name="latitude">-3.872</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.37379281065761,-3.8718332506000945</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.23">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Prainha</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.352</SimpleData>
+                        <SimpleData name="latitude">-3.897</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.35205728734143,-3.897352618690539</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.24">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Iguape</SimpleData>
+                        <SimpleData name="municipio">Aquiraz</SimpleData>
+                        <SimpleData name="longitude">-38.296</SimpleData>
+                        <SimpleData name="latitude">-3.942</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.29587474524652,-3.9419943902953447</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.25">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia Nova/Barra dos Rem�dios</SimpleData>
+                        <SimpleData name="municipio">Barroquinha</SimpleData>
+                        <SimpleData name="longitude">-41.104</SimpleData>
+                        <SimpleData name="latitude">-2.901</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.103893323007576,-2.900731674928037</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.26">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia das Curim�s</SimpleData>
+                        <SimpleData name="municipio">Barroquinha</SimpleData>
+                        <SimpleData name="longitude">-41.137</SimpleData>
+                        <SimpleData name="latitude">-2.893</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.136664990255916,-2.8932265713376166</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.27">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Bitupitá</SimpleData>
+                        <SimpleData name="municipio">Barroquinha</SimpleData>
+                        <SimpleData name="longitude">-41.216</SimpleData>
+                        <SimpleData name="latitude">-2.891</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.21597746514534,-2.8909470471151906</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.28">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Pontal das Almas</SimpleData>
+                        <SimpleData name="municipio">Barroquinha</SimpleData>
+                        <SimpleData name="longitude">-41.285</SimpleData>
+                        <SimpleData name="latitude">-2.903</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.28526819545833,-2.903036124759579</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.29">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Morro Branco</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-38.145</SimpleData>
+                        <SimpleData name="latitude">-4.103</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.14527565880511,-4.103039285512345</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.30">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia das Fontes</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-38.102</SimpleData>
+                        <SimpleData name="latitude">-4.162</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.10176800979912,-4.161507128619385</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.31">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Diogo</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-38.069</SimpleData>
+                        <SimpleData name="latitude">-4.191</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.06941441267569,-4.191258996141476</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.32">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Uruaú</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-38.047</SimpleData>
+                        <SimpleData name="latitude">-4.217</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.046600814322005,-4.216765137732442</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.33">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barra da Sucatinga</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-38.016</SimpleData>
+                        <SimpleData name="latitude">-4.244</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.016365689594586,-4.2438566664912445</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.34">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Arios e Campestre</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-37.98</SimpleData>
+                        <SimpleData name="latitude">-4.271</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.979770078545215,-4.270938059905867</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.35">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Prainha do Canto Verde</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-37.938</SimpleData>
+                        <SimpleData name="latitude">-4.313</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.938382521092635,-4.312904515617801</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.36">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Parajuru</SimpleData>
+                        <SimpleData name="municipio">Beberibe</SimpleData>
+                        <SimpleData name="longitude">-37.922</SimpleData>
+                        <SimpleData name="latitude">-4.326</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.92193717178693,-4.326179566591756</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.37">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barra Velha</SimpleData>
+                        <SimpleData name="municipio">Cascavel</SimpleData>
+                        <SimpleData name="longitude">-38.171</SimpleData>
+                        <SimpleData name="latitude">-4.071</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.17126752859747,-4.071414455469749</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.38">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barra Nova</SimpleData>
+                        <SimpleData name="municipio">Cascavel</SimpleData>
+                        <SimpleData name="longitude">-38.152</SimpleData>
+                        <SimpleData name="latitude">-4.098</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.1519032579369,-4.097992665200214</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.39">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Águas Belas</SimpleData>
+                        <SimpleData name="municipio">Cascavel</SimpleData>
+                        <SimpleData name="longitude">-38.182</SimpleData>
+                        <SimpleData name="latitude">-4.053</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.18241106654568,-4.053072813705794</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.40">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Caponga</SimpleData>
+                        <SimpleData name="municipio">Cascavel</SimpleData>
+                        <SimpleData name="longitude">-38.198</SimpleData>
+                        <SimpleData name="latitude">-4.038</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.197788342415,-4.038458933189895</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.41">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Balbino</SimpleData>
+                        <SimpleData name="municipio">Cascavel</SimpleData>
+                        <SimpleData name="longitude">-38.213</SimpleData>
+                        <SimpleData name="latitude">-4.022</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.21290173653726,-4.022248459272366</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.42">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barra dos Rem�dios</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-41.084</SimpleData>
+                        <SimpleData name="latitude">-2.895</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.083788347937144,-2.8951863575509016</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.43">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Xavier</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-41.049</SimpleData>
+                        <SimpleData name="latitude">-2.895</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.04888647830274,-2.8952503086934196</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.44">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barrinha</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-41.006</SimpleData>
+                        <SimpleData name="latitude">-2.89</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-41.005513136084964,-2.890011143254106</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.45">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Maceió</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.957</SimpleData>
+                        <SimpleData name="latitude">-2.878</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.9568396911823,-2.878398456230288</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.46">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Caraúbas</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.902</SimpleData>
+                        <SimpleData name="latitude">-2.865</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.90181612145193,-2.8646666342291685</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.47">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Farol</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.862</SimpleData>
+                        <SimpleData name="latitude">-2.862</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.86161751431086,-2.8615424470206947</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.48">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barreiras</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.849</SimpleData>
+                        <SimpleData name="latitude">-2.879</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.84895204164079,-2.8785794434472165</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.49">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Ilha do Amor</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.823</SimpleData>
+                        <SimpleData name="latitude">-2.882</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.82251303926941,-2.881812853651722</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.50">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Imburanas</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.772</SimpleData>
+                        <SimpleData name="latitude">-2.853</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.77169498228753,-2.853177047697176</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.51">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Tatajuba</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.699</SimpleData>
+                        <SimpleData name="latitude">-2.851</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.69870380262671,-2.8511604959733976</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.52">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Guriús</SimpleData>
+                        <SimpleData name="municipio">Camocim</SimpleData>
+                        <SimpleData name="longitude">-40.628</SimpleData>
+                        <SimpleData name="latitude">-2.85</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.62782731175787,-2.850199781195924</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.53">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Cauípe</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.774</SimpleData>
+                        <SimpleData name="latitude">-3.593</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.77377022765628,-3.5929870744391716</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.54">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Cumbuco</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.71</SimpleData>
+                        <SimpleData name="latitude">-3.634</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.71021464466371,-3.6344670379131725</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.55">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Tabuba</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.679</SimpleData>
+                        <SimpleData name="latitude">-3.66</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.67949216059577,-3.6599937461859606</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.56">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Icaraí</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.657</SimpleData>
+                        <SimpleData name="latitude">-3.678</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.65724393162234,-3.6780742378680547</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.57">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Pacheco</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.632</SimpleData>
+                        <SimpleData name="latitude">-3.687</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.63182131769864,-3.686576399991518</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.58">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Iparana</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.609</SimpleData>
+                        <SimpleData name="latitude">-3.692</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.608517975083636,-3.691886610119269</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.59">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia dos Dois Coqueiros</SimpleData>
+                        <SimpleData name="municipio">Caucaia</SimpleData>
+                        <SimpleData name="longitude">-38.589</SimpleData>
+                        <SimpleData name="latitude">-3.696</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.58945148806263,-3.696134118620621</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.60">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Formosa</SimpleData>
+                        <SimpleData name="municipio">Cruz</SimpleData>
+                        <SimpleData name="longitude">-40.371</SimpleData>
+                        <SimpleData name="latitude">-2.813</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.37097294299385,-2.8125059678876645</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.61">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Preá</SimpleData>
+                        <SimpleData name="municipio">Cruz</SimpleData>
+                        <SimpleData name="longitude">-40.396</SimpleData>
+                        <SimpleData name="latitude">-2.814</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.395571607920125,-2.8138063675996046</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.62">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Parque Nacional</SimpleData>
+                        <SimpleData name="municipio">Cruz</SimpleData>
+                        <SimpleData name="longitude">-40.425</SimpleData>
+                        <SimpleData name="latitude">-2.811</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.42545516469155,-2.811376606336113</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.63">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Sabiaguaba</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.423</SimpleData>
+                        <SimpleData name="latitude">-3.792</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.42310530428536,-3.7915359601508825</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.64">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Mucuripe</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.487</SimpleData>
+                        <SimpleData name="latitude">-3.723</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.48749391903438,-3.723213431152185</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.65">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Meireles</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.5</SimpleData>
+                        <SimpleData name="latitude">-3.725</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.50020296789598,-3.72481678747955</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.66">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Abreulândia</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.407</SimpleData>
+                        <SimpleData name="latitude">-3.815</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.407200666306245,-3.8151992442038742</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.67">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Futuro</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.427</SimpleData>
+                        <SimpleData name="latitude">-3.784</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.42681734426417,-3.7843563866937675</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.68">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia Mansa/Cais do Porto</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.463</SimpleData>
+                        <SimpleData name="latitude">-3.714</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.46340335249363,-3.714420916277248</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.69">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Titanzinho/Farol</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.474</SimpleData>
+                        <SimpleData name="latitude">-3.712</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.473731459848736,-3.7120331120776973</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.70">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Iracema</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.514</SimpleData>
+                        <SimpleData name="latitude">-3.718</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.51424042135463,-3.7184405245403505</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.71">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Leste Oeste/Formosa</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.534</SimpleData>
+                        <SimpleData name="latitude">-3.718</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.53409984011594,-3.718185263393923</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.72">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Pirambu</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.548</SimpleData>
+                        <SimpleData name="latitude">-3.711</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.54813754887835,-3.7107443846579344</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.73">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Colônia</SimpleData>
+                        <SimpleData name="municipio">Fortaleza</SimpleData>
+                        <SimpleData name="longitude">-38.563</SimpleData>
+                        <SimpleData name="latitude">-3.705</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.56296849085458,-3.705165700260236</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.74">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia das Pedrinhas</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.797</SimpleData>
+                        <SimpleData name="latitude">-4.395</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.796863436872954,-4.395486435982556</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.75">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia das Agulhas</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.8</SimpleData>
+                        <SimpleData name="latitude">-4.399</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.80017322331864,-4.399075697629341</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.76">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Canto da Barra</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.776</SimpleData>
+                        <SimpleData name="latitude">-4.428</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.77631036923517,-4.428232232831055</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.77">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia Canoé</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.768</SimpleData>
+                        <SimpleData name="latitude">-4.421</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.768373559685514,-4.420772460456204</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.78">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Forte</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.767</SimpleData>
+                        <SimpleData name="latitude">-4.41</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.766802197841784,-4.409599961768054</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.79">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Pontal do Macei�</SimpleData>
+                        <SimpleData name="municipio">Fortim</SimpleData>
+                        <SimpleData name="longitude">-37.771</SimpleData>
+                        <SimpleData name="latitude">-4.4</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.771058202641896,-4.399500916181311</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.80">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Picos</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.449</SimpleData>
+                        <SimpleData name="latitude">-4.657</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.44913295757625,-4.657101253500947</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.81">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Retiro Grande</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.54</SimpleData>
+                        <SimpleData name="latitude">-4.645</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.54006165667438,-4.644797533657089</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.82">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Ponta Grossa</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.519</SimpleData>
+                        <SimpleData name="latitude">-4.639</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.51940096362605,-4.639436026248827</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.83">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Redonda</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.495</SimpleData>
+                        <SimpleData name="latitude">-4.63</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.494509524194946,-4.629810321465969</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.84">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Peroba</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.461</SimpleData>
+                        <SimpleData name="latitude">-4.652</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.460539724507655,-4.652073959089715</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.85">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barreiras de Baixo</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.432</SimpleData>
+                        <SimpleData name="latitude">-4.664</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.43189097223284,-4.664242585721881</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.86">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barreiras de Cima</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.413</SimpleData>
+                        <SimpleData name="latitude">-4.673</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.41331947824117,-4.673241721499073</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.87">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barrinha</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.387</SimpleData>
+                        <SimpleData name="latitude">-4.68</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.387333180575155,-4.679564100865833</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.88">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Requenguela</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.369</SimpleData>
+                        <SimpleData name="latitude">-4.684</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.3687709163448,-4.684307310325883</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.89">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Placas</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.348</SimpleData>
+                        <SimpleData name="latitude">-4.692</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.348080929577236,-4.6922356976721975</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.90">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Quitárias</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.314</SimpleData>
+                        <SimpleData name="latitude">-4.711</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.31411293950162,-4.711298866629575</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.91">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Tremembés</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.294</SimpleData>
+                        <SimpleData name="latitude">-4.733</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.2939195270718,-4.73252091717889</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.92">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Manibu</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.278</SimpleData>
+                        <SimpleData name="latitude">-4.757</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.27848617638932,-4.757476282550687</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.93">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barrinha de Manib�</SimpleData>
+                        <SimpleData name="municipio">Icapuí</SimpleData>
+                        <SimpleData name="longitude">-37.268</SimpleData>
+                        <SimpleData name="latitude">-4.795</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.26832155563634,-4.794675052349648</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.94">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Reserva Indígena</SimpleData>
+                        <SimpleData name="municipio">Itapipoca</SimpleData>
+                        <SimpleData name="longitude">-39.384</SimpleData>
+                        <SimpleData name="latitude">-3.184</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.38414074190295,-3.183691674984279</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.95">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Baleia</SimpleData>
+                        <SimpleData name="municipio">Itapipoca</SimpleData>
+                        <SimpleData name="longitude">-39.421</SimpleData>
+                        <SimpleData name="latitude">-3.155</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.42091478731186,-3.1549480233488327</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.96">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Bode</SimpleData>
+                        <SimpleData name="municipio">Itapipoca</SimpleData>
+                        <SimpleData name="longitude">-39.47</SimpleData>
+                        <SimpleData name="latitude">-3.141</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.469601538671746,-3.1408285757396697</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.97">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Maceió</SimpleData>
+                        <SimpleData name="municipio">Itapipoca</SimpleData>
+                        <SimpleData name="longitude">-39.481</SimpleData>
+                        <SimpleData name="latitude">-3.128</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.481239249977975,-3.127522789580479</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.98">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Apiques</SimpleData>
+                        <SimpleData name="municipio">Itapipoca</SimpleData>
+                        <SimpleData name="longitude">-39.516</SimpleData>
+                        <SimpleData name="latitude">-3.105</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.51589428391923,-3.104629559264622</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.99">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Serrote</SimpleData>
+                        <SimpleData name="municipio">Jijoca de Jericoacoara</SimpleData>
+                        <SimpleData name="longitude">-40.515</SimpleData>
+                        <SimpleData name="latitude">-2.792</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.515343773755035,-2.791733277004998</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.100">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Malhada</SimpleData>
+                        <SimpleData name="municipio">Jijoca de Jericoacoara</SimpleData>
+                        <SimpleData name="longitude">-40.52</SimpleData>
+                        <SimpleData name="latitude">-2.793</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.519841718187166,-2.793323000597383</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.101">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia de Jericoacoara</SimpleData>
+                        <SimpleData name="municipio">Jijoca de Jericoacoara</SimpleData>
+                        <SimpleData name="longitude">-40.518</SimpleData>
+                        <SimpleData name="latitude">-2.798</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-40.51773181195436,-2.7978464986346583</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.102">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia dos Anjos</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-38.966</SimpleData>
+                        <SimpleData name="latitude">-3.422</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.965721301392044,-3.4222479563113692</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.103">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Pedra Redonda</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-38.976</SimpleData>
+                        <SimpleData name="latitude">-3.411</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.97604544249271,-3.4114745738049232</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.104">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Vapor</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-38.981</SimpleData>
+                        <SimpleData name="latitude">-3.408</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.98094268112942,-3.407883450663504</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.105">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Pau Infincado</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.004</SimpleData>
+                        <SimpleData name="latitude">-3.397</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.00350923828747,-3.3969104191852066</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.106">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia das Almas</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.018</SimpleData>
+                        <SimpleData name="latitude">-3.404</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.017671237324365,-3.4040927308701914</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.107">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Boca do Po�o</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.027</SimpleData>
+                        <SimpleData name="latitude">-3.405</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.026539028917455,-3.404624561279543</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.108">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Guajiru da Barra</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.054</SimpleData>
+                        <SimpleData name="latitude">-3.41</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.05380446208174,-3.410342789628942</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.109">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Barra</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.062</SimpleData>
+                        <SimpleData name="latitude">-3.407</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.06187796289268,-3.4072831054235175</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.110">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Porto Buraco Quebra Mar</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-38.988</SimpleData>
+                        <SimpleData name="latitude">-3.403</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.98802375357616,-3.40316175821866</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.111">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Quebra Mar</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-38.995</SimpleData>
+                        <SimpleData name="latitude">-3.401</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.99490621519157,-3.400501646168646</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.112">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Igreja Velha (Ronco do mar)</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.03</SimpleData>
+                        <SimpleData name="latitude">-3.405</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.02958320286143,-3.404956993889464</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.113">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Munguba</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.034</SimpleData>
+                        <SimpleData name="latitude">-3.41</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.03368638558347,-3.4100776906315033</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.114">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Bica</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.034</SimpleData>
+                        <SimpleData name="latitude">-3.41</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.03448051732552,-3.4100111580862396</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.115">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Coqueirinho</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.037</SimpleData>
+                        <SimpleData name="latitude">-3.411</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.03732619508084,-3.410809103151984</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.116">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Meio</SimpleData>
+                        <SimpleData name="municipio">Paracuru</SimpleData>
+                        <SimpleData name="longitude">-39.042</SimpleData>
+                        <SimpleData name="latitude">-3.412</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.041958684756864,-3.411673467416209</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.117">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Capim A��</SimpleData>
+                        <SimpleData name="municipio">Paraipaba</SimpleData>
+                        <SimpleData name="longitude">-39.063</SimpleData>
+                        <SimpleData name="latitude">-3.409</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.06320162819807,-3.4090121304447147</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.118">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia do Porto Velho</SimpleData>
+                        <SimpleData name="municipio">Paraipaba</SimpleData>
+                        <SimpleData name="longitude">-39.124</SimpleData>
+                        <SimpleData name="latitude">-3.345</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.12394460120082,-3.3447631363007675</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.119">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Praia da Lagoinha</SimpleData>
+                        <SimpleData name="municipio">Paraipaba</SimpleData>
+                        <SimpleData name="longitude">-39.135</SimpleData>
+                        <SimpleData name="latitude">-3.345</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.134532323200034,-3.344761735955418</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.120">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Barramar</SimpleData>
+                        <SimpleData name="municipio">São Gonçalo do Amarante</SimpleData>
+                        <SimpleData name="longitude">-38.929</SimpleData>
+                        <SimpleData name="latitude">-3.476</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.92885581896746,-3.475648805403975</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.121">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Taíba</SimpleData>
+                        <SimpleData name="municipio">São Gonçalo do Amarante</SimpleData>
+                        <SimpleData name="longitude">-38.887</SimpleData>
+                        <SimpleData name="latitude">-3.509</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.8872894054608,-3.5086307641536085</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.122">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Colônia</SimpleData>
+                        <SimpleData name="municipio">São Gonçalo do Amarante</SimpleData>
+                        <SimpleData name="longitude">-38.849</SimpleData>
+                        <SimpleData name="latitude">-3.543</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.848896763401726,-3.5434733853862412</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.123">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Pecém</SimpleData>
+                        <SimpleData name="municipio">São Gonçalo do Amarante</SimpleData>
+                        <SimpleData name="longitude">-38.827</SimpleData>
+                        <SimpleData name="latitude">-3.547</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-38.82745157101079,-3.546927822899866</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.124">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Cana Brava</SimpleData>
+                        <SimpleData name="municipio">Trairi</SimpleData>
+                        <SimpleData name="longitude">-39.2</SimpleData>
+                        <SimpleData name="latitude">-3.273</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.20016167148564,-3.2729261208449603</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.125">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Guajirú</SimpleData>
+                        <SimpleData name="municipio">Trairi</SimpleData>
+                        <SimpleData name="longitude">-39.233</SimpleData>
+                        <SimpleData name="latitude">-3.239</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.232973270181986,-3.2388689675591125</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.126">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Flecheiras</SimpleData>
+                        <SimpleData name="municipio">Trairi</SimpleData>
+                        <SimpleData name="longitude">-39.269</SimpleData>
+                        <SimpleData name="latitude">-3.218</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.268961870797966,-3.2175787896947177</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.127">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Emboaca</SimpleData>
+                        <SimpleData name="municipio">Trairi</SimpleData>
+                        <SimpleData name="longitude">-39.314</SimpleData>
+                        <SimpleData name="latitude">-3.208</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.314479910991686,-3.2079891991383405</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.128">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Mundaú</SimpleData>
+                        <SimpleData name="municipio">Trairi</SimpleData>
+                        <SimpleData name="longitude">-39.38</SimpleData>
+                        <SimpleData name="latitude">-3.182</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-39.38010443266334,-3.182429617742006</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.129">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Cumbe</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.76128036610711,-4.4309619535717255</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.130">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Canoa Quebrada</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.73853673338336,-4.475520907482635</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.131">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Majorlandia</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.681909729458916,-4.539110247959825</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.132">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Quixaba</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.659630252505046,-4.565567126844549</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.133">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Lagoa do mato</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.64384895632937,-4.582276734561235</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.134">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Fontainha</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.615071298597286,-4.606876990366379</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.135">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Retirinho</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.59047104279404,-4.62590737693264</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="0701_ce_banho_mar_2021_pto.136">
+                <ExtendedData>
+                    <SchemaData schemaUrl="#0701_ce_banho_mar_2021_pto_1">
+                        <SimpleData name="praia">Retiro grande</SimpleData>
+                        <SimpleData name="municipio">Aracati</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+                <Point>
+                    <coordinates>-37.574689746618375,-4.632869713481279</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
