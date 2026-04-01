@@ -94,6 +94,22 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 #seg-tooltip .st-title{font-weight:600;font-size:12px;color:#fff;margin-bottom:4px}
 #seg-tooltip .st-body{color:var(--muted)}
 #seg-tooltip .st-body b{color:var(--text)}
+#edit-btn{position:absolute;bottom:96px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:'DM Sans',sans-serif}
+#edit-btn:hover,#edit-btn.active{background:rgba(99,102,241,0.25);border-color:rgba(99,102,241,0.6);color:#818CF8}
+#edit-banner{position:absolute;top:55px;left:50%;transform:translateX(-50%);z-index:901;background:rgba(99,102,241,0.92);backdrop-filter:blur(8px);border:1px solid rgba(99,102,241,0.6);border-radius:50px;padding:6px 18px;font-size:11px;color:#fff;white-space:nowrap;display:none;align-items:center;gap:8px}
+#export-btn{position:absolute;bottom:60px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--muted);cursor:pointer;display:none;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;transition:all .2s}
+#export-btn:hover{background:rgba(0,201,167,0.2);border-color:rgba(0,201,167,0.5);color:var(--propria)}
+.edit-popup{padding:14px;width:260px}
+.edit-popup-title{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:#fff;margin-bottom:2px}
+.edit-popup-sub{font-size:10px;color:#6B7280;margin-bottom:10px}
+.edit-popup-coords{background:rgba(0,0,0,0.3);border-radius:6px;padding:8px 10px;font-size:11px;color:#A5B4FC;font-family:monospace;margin-bottom:10px;line-height:1.9}
+.edit-popup-coords .old{color:#6B7280;text-decoration:line-through}
+.edit-popup-btns{display:flex;gap:8px}
+.edit-popup-btns button{flex:1;padding:7px 0;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.edit-popup-confirm{background:#6366F1;color:#fff}
+.edit-popup-confirm:hover{background:#4F46E5}
+.edit-popup-cancel{background:rgba(255,255,255,0.08);color:var(--muted)}
+.edit-popup-cancel:hover{background:rgba(255,255,255,0.15);color:#fff}
 @media(max-width:700px){#sidebar{width:100%;min-width:unset;height:44vh;border-right:none;border-bottom:1px solid var(--border)}#app{flex-direction:column}#map-container{height:56vh}.popup-inner{width:260px}}
 </style>
 </head>
@@ -147,6 +163,9 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
     <div class="st-title" id="st-title"></div>
     <div class="st-body"  id="st-body"></div>
   </div>
+  <button id="edit-btn" onclick="toggleEditMode()" title="Modo de edição de coordenadas">✏️ Editar coords</button>
+  <div id="edit-banner">✏️ Arraste os marcadores para corrigir coordenadas &nbsp;<button onclick="toggleEditMode()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50px;padding:3px 10px;font-size:10px;cursor:pointer;font-family:'DM Sans',sans-serif">Sair</button></div>
+  <button id="export-btn" onclick="exportCorrections()" title="Exportar correções salvas como JSON">⬇ Exportar (<span id="corr-count">0</span>)</button>
 </div>
 </div>
 
@@ -174,7 +193,7 @@ fetch('data/balneabilidade.json')
     });
     // Atualiza cor dos marcadores no mapa
     BEACHES.forEach(b => {
-      if(MARKERS[b.id]) MARKERS[b.id].setStyle({fillColor: STATUS_COLOR[b.status]});
+      if(MARKERS[b.id]) MARKERS[b.id].setIcon(makeIcon(STATUS_COLOR[b.status],!!corrections[b.id]));
     });
     refresh();
   })
@@ -449,14 +468,28 @@ function buildPopup(b){
   </div>`;
 }
 
+// ── Edição de coordenadas ────────────────────────────────────────
+let editMode=false;
+let corrections=JSON.parse(localStorage.getItem('coord_corrections')||'{}');
+
+function makeIcon(color,corrected){
+  const border=corrected?'#FFD700':'#fff';
+  const glow=corrected?'0 0 0 2px rgba(255,215,0,0.35)':'none';
+  return L.divIcon({
+    className:'',
+    html:`<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid ${border};box-sizing:border-box;box-shadow:${glow}"></div>`,
+    iconSize:[14,14],iconAnchor:[7,7],popupAnchor:[0,-10]
+  });
+}
+
 // ── Marcadores ──────────────────────────────────────────────────
 const MARKERS={};
 let selectedId=null;
 
 BEACHES.forEach(b=>{
-  const m=L.circleMarker([b.lat,b.lng],{
-    radius:7,fillColor:STATUS_COLOR[b.status],
-    color:'#fff',weight:2,fillOpacity:1
+  const m=L.marker([b.lat,b.lng],{
+    icon:makeIcon(STATUS_COLOR[b.status],!!corrections[b.id]),
+    draggable:false
   }).addTo(map);
 
   m.bindPopup(()=>buildPopup(b),{maxWidth:320,minWidth:300});
@@ -467,9 +500,104 @@ BEACHES.forEach(b=>{
       if(canvas) renderChart(b.id, canvas.id);
     },50);
   });
-  m.on('click',()=>selectBeach(b.id));
+  m.on('click',()=>{ if(!editMode) selectBeach(b.id); });
+
+  let _preDragLat=b.lat,_preDragLng=b.lng;
+  m.on('dragstart',()=>{
+    const ll=m.getLatLng();
+    _preDragLat=ll.lat; _preDragLng=ll.lng;
+    m.closePopup();
+  });
+  m.on('dragend',()=>{
+    const ll=m.getLatLng();
+    showEditConfirm(b,_preDragLat,_preDragLng,ll.lat,ll.lng);
+  });
+
   MARKERS[b.id]=m;
 });
+
+// Aplica correções salvas no localStorage
+(function applyStoredCorrections(){
+  Object.entries(corrections).forEach(([id,c])=>{
+    const b=BY_ID[id];
+    if(b&&MARKERS[id]){ b.lat=c.lat; b.lng=c.lng; MARKERS[id].setLatLng([c.lat,c.lng]); }
+  });
+  const count=Object.keys(corrections).length;
+  if(count>0){
+    document.getElementById('corr-count').textContent=count;
+    document.getElementById('export-btn').style.display='flex';
+  }
+})();
+
+// ── Lógica do modo de edição ─────────────────────────────────────
+function toggleEditMode(){
+  editMode=!editMode;
+  document.getElementById('edit-btn').classList.toggle('active',editMode);
+  document.getElementById('edit-banner').style.display=editMode?'flex':'none';
+  const count=Object.keys(corrections).length;
+  document.getElementById('export-btn').style.display=(count>0||editMode)?'flex':'none';
+  BEACHES.forEach(b=>{
+    const m=MARKERS[b.id];
+    if(!m) return;
+    if(editMode) m.dragging.enable(); else m.dragging.disable();
+  });
+  if(!editMode) map.closePopup();
+}
+
+const _editPopup=L.popup({maxWidth:280,minWidth:260,closeButton:false,className:'leaflet-popup-content-wrapper'});
+
+function showEditConfirm(b,oldLat,oldLng,newLat,newLng){
+  _editPopup.setLatLng([newLat,newLng]);
+  _editPopup.setContent(
+    `<div class="edit-popup">
+      <div class="edit-popup-title">${b.praia} · ${b.id}</div>
+      <div class="edit-popup-sub">${b.ref}</div>
+      <div class="edit-popup-coords">
+        <div class="old">Antes: ${oldLat.toFixed(6)}, ${oldLng.toFixed(6)}</div>
+        <div>Depois: ${newLat.toFixed(6)}, ${newLng.toFixed(6)}</div>
+      </div>
+      <div class="edit-popup-btns">
+        <button class="edit-popup-confirm" onclick="confirmEdit('${b.id}',${newLat},${newLng})">✓ Confirmar</button>
+        <button class="edit-popup-cancel" onclick="cancelEdit('${b.id}',${oldLat},${oldLng})">✗ Cancelar</button>
+      </div>
+    </div>`);
+  _editPopup.openOn(map);
+}
+
+function confirmEdit(id,lat,lng){
+  corrections[id]={lat,lng};
+  localStorage.setItem('coord_corrections',JSON.stringify(corrections));
+  const b=BY_ID[id];
+  if(b){ b.lat=lat; b.lng=lng; }
+  if(MARKERS[id]) MARKERS[id].setIcon(makeIcon(STATUS_COLOR[b?b.status:'P'],true));
+  map.closePopup();
+  const count=Object.keys(corrections).length;
+  document.getElementById('corr-count').textContent=count;
+  document.getElementById('export-btn').style.display='flex';
+}
+
+function cancelEdit(id,oldLat,oldLng){
+  if(MARKERS[id]) MARKERS[id].setLatLng([oldLat,oldLng]);
+  map.closePopup();
+}
+
+function exportCorrections(){
+  const entries=Object.entries(corrections);
+  if(!entries.length){ alert('Nenhuma correção salva ainda.'); return; }
+  const obj={corrections:{}};
+  entries.forEach(([id,c])=>{
+    const b=BY_ID[id];
+    obj.corrections[id]={lat:parseFloat(c.lat.toFixed(6)),lng:parseFloat(c.lng.toFixed(6)),praia:b?b.praia:''};
+  });
+  const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='coord_corrections.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
 
 // ── Sidebar ─────────────────────────────────────────────────────
 let currentFilter='all',currentSearch='';

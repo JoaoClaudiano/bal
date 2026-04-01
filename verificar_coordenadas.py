@@ -580,7 +580,7 @@ def main():
     )
     args = parser.parse_args()
 
-    # Modo padrão: executa todas as verificações exceto Nominatim (lenta)
+    # Modo padrão: executa SEMACE e KML (Nominatim apenas com --nominatim, pois é lenta)
     qualquer_flag = args.semace or args.nominatim or args.kml
     fazer_semace    = args.semace    or not qualquer_flag
     fazer_nominatim = args.nominatim
