@@ -26,16 +26,33 @@ SCRAPER = Path(__file__).parent / "scraper_semace.py"
 
 def aplicar(json_path: str) -> None:
     data = json.loads(Path(json_path).read_text(encoding="utf-8"))
-    corrections: dict = data.get("corrections", {})
-    if not corrections:
-        print("Nenhuma correção encontrada no arquivo.")
+
+    # Aceita dois formatos:
+    # 1. {"corrections": {"56OE": {"lat":..., "lng":..., "praia":...}}}  ← só corrigidas
+    # 2. {"pontos": {"56OE": {"lat":..., "lng":..., ..., "corrigido": true/false}}}  ← tudo
+    if "corrections" in data:
+        entries = data["corrections"]
+        modo = "corrections"
+    elif "pontos" in data:
+        # Do formato "tudo", aplica apenas os que têm corrigido=True
+        entries = {k: v for k, v in data["pontos"].items() if v.get("corrigido")}
+        modo = "pontos"
+    else:
+        print("Formato de arquivo não reconhecido. Esperado: chave 'corrections' ou 'pontos'.")
+        return
+
+    if not entries:
+        msg = "Nenhuma correção encontrada no arquivo."
+        if modo == "pontos":
+            msg += " (nenhum ponto com corrigido=true)"
+        print(msg)
         return
 
     texto = SCRAPER.read_text(encoding="utf-8")
     alterados = []
     nao_encontrados = []
 
-    for cod, c in corrections.items():
+    for cod, c in entries.items():
         lat = c["lat"]
         lng = c["lng"]
         # Procura a linha com o código e substitui lat/lng

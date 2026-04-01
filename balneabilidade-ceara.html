@@ -97,8 +97,10 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 #edit-btn{position:absolute;bottom:96px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:'DM Sans',sans-serif}
 #edit-btn:hover,#edit-btn.active{background:rgba(99,102,241,0.25);border-color:rgba(99,102,241,0.6);color:#818CF8}
 #edit-banner{position:absolute;top:55px;left:50%;transform:translateX(-50%);z-index:901;background:rgba(99,102,241,0.92);backdrop-filter:blur(8px);border:1px solid rgba(99,102,241,0.6);border-radius:50px;padding:6px 18px;font-size:11px;color:#fff;white-space:nowrap;display:none;align-items:center;gap:8px}
-#export-btn{position:absolute;bottom:60px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--muted);cursor:pointer;display:none;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;transition:all .2s}
+#export-btn{position:absolute;bottom:60px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;transition:all .2s}
 #export-btn:hover{background:rgba(0,201,167,0.2);border-color:rgba(0,201,167,0.5);color:var(--propria)}
+#export-all-btn{position:absolute;bottom:28px;right:18px;z-index:900;background:rgba(17,24,39,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:11px;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;transition:all .2s}
+#export-all-btn:hover{background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.5);color:#A5B4FC}
 .edit-popup{padding:14px;width:260px}
 .edit-popup-title{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:#fff;margin-bottom:2px}
 .edit-popup-sub{font-size:10px;color:#6B7280;margin-bottom:10px}
@@ -165,7 +167,8 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
   </div>
   <button id="edit-btn" onclick="toggleEditMode()" title="Modo de edição de coordenadas">✏️ Editar coords</button>
   <div id="edit-banner">✏️ Arraste os marcadores para corrigir coordenadas &nbsp;<button onclick="toggleEditMode()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50px;padding:3px 10px;font-size:10px;cursor:pointer;font-family:'DM Sans',sans-serif">Sair</button></div>
-  <button id="export-btn" onclick="exportCorrections()" title="Exportar correções salvas como JSON">⬇ Exportar (<span id="corr-count">0</span>)</button>
+  <button id="export-btn" onclick="exportCorrections()" title="Exportar apenas as correções salvas como JSON">⬇ Só corrigidas (<span id="corr-count">0</span>)</button>
+  <button id="export-all-btn" onclick="exportAll()" title="Exportar todos os pontos (corrigidos e originais)">⬇ Exportar tudo</button>
 </div>
 </div>
 
@@ -525,7 +528,6 @@ BEACHES.forEach(b=>{
   const count=Object.keys(corrections).length;
   if(count>0){
     document.getElementById('corr-count').textContent=count;
-    document.getElementById('export-btn').style.display='flex';
   }
 })();
 
@@ -534,8 +536,6 @@ function toggleEditMode(){
   editMode=!editMode;
   document.getElementById('edit-btn').classList.toggle('active',editMode);
   document.getElementById('edit-banner').style.display=editMode?'flex':'none';
-  const count=Object.keys(corrections).length;
-  document.getElementById('export-btn').style.display=(count>0||editMode)?'flex':'none';
   BEACHES.forEach(b=>{
     const m=MARKERS[b.id];
     if(!m) return;
@@ -573,7 +573,6 @@ function confirmEdit(id,lat,lng){
   map.closePopup();
   const count=Object.keys(corrections).length;
   document.getElementById('corr-count').textContent=count;
-  document.getElementById('export-btn').style.display='flex';
 }
 
 function cancelEdit(id,oldLat,oldLng){
@@ -597,6 +596,33 @@ function exportCorrections(){
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(a.href);
+}
+
+function exportAll(){
+  function dl(blob,name){
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download=name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+  }
+  // Constrói objeto com todos os pontos, usando coordenada corrigida quando disponível
+  const obj={pontos:{}};
+  BEACHES.forEach(b=>{
+    const c=corrections[b.id];
+    obj.pontos[b.id]={
+      praia:b.praia,
+      ref:b.ref,
+      lat:parseFloat((c?c.lat:b.lat).toFixed(6)),
+      lng:parseFloat((c?c.lng:b.lng).toFixed(6)),
+      setor:b.setor,
+      municipio:b.municipio,
+      corrigido:!!c
+    };
+  });
+  dl(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}),'coordenadas_todas.json');
 }
 
 // ── Sidebar ─────────────────────────────────────────────────────
